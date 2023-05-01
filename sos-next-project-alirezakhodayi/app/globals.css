@@ -7,3 +7,10 @@
 a {
   text-decoration: none;
 }
+
+@font-face {
+  font-family: IranSans;
+  src: url("/fonts/IRANSansXV.woff2");
+  format: ("woff2");
+  font-display: swap;
+}

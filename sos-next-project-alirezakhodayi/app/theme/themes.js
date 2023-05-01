@@ -1,5 +1,6 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
+import localFont from "next/font/local";
 
 let theme = createTheme({
   palette: {
@@ -9,6 +10,10 @@ let theme = createTheme({
     // secondary: {
     //   main: "#edf2ff",
     // },
+  },
+  direction: "rtl",
+  typography: {
+    fontFamily: "IranSans, Roboto",
   },
 });
 
