@@ -12,7 +12,7 @@
  3) https://supabase.com/docs/guides/getting-started/quickstarts/nextjs
  
  NextJs 13 with new brand App directory:
- https://beta.nextjs.org/docs/getting-started
+ 1) https://beta.nextjs.org/docs/getting-started
  
  
  
