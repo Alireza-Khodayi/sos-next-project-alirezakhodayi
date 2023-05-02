@@ -1,5 +1,5 @@
 # sos-next-project-alirezakhodayi
- A real time todo + a simple task for getting hire
+ CSR Todo List and SSG Blog that both conected to Database, also can save todos to database and read todos/posts from database
  
  
  I used Nextjs Material UI and Supabase for this project.
