@@ -17,8 +17,8 @@ import Link from "next/link";
 
 const pages = [
   { id: 1, name: "صفحه اصلی", href: "/" },
-  { id: 1, name: "بلاگ", href: "/blog" },
-  { id: 1, name: "Todo List", href: "/todo-list" },
+  { id: 2, name: "بلاگ", href: "/blog" },
+  { id: 3, name: "Todo List", href: "/todo-list" },
 ];
 
 function Navigation() {
@@ -42,7 +42,7 @@ function Navigation() {
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: 4 }}>
             <Link href="/">
-              <Image src="/logo.svg" width={150} height={60} alt="logo" />
+              <Image src="/logo.svg" width={150} height={40} alt="logo" />
             </Link>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -58,10 +58,10 @@ function Navigation() {
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              // anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
@@ -75,8 +75,8 @@ function Navigation() {
               }}
             >
               {pages.map((page) => (
-                <Link href={page.href}>
-                  <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                <Link key={page.id} href={page.href}>
+                  <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </Link>
@@ -85,14 +85,13 @@ function Navigation() {
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 }}>
             <Link href="/">
-              <Image src="/logo.svg" width={150} height={60} alt="logo" />
+              <Image src="/logo.svg" width={150} height={30} alt="logo" />
             </Link>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link href={page.href}>
+              <Link key={page.id} href={page.href}>
                 <Button
-                  key={page.id}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "primary", display: "block" }}
                 >
@@ -103,7 +102,7 @@ function Navigation() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button variant="contained" size="large">
+            <Button variant="contained" size="medium">
               ورود و فعالسازی
             </Button>
           </Box>

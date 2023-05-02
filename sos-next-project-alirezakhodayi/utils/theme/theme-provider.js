@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "../theme/themes";
+import theme from "./themes";
 import CssBaseline from "@mui/material/CssBaseline";
 const MuiTheme = ({ children }) => {
   return (

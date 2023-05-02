@@ -13,8 +13,8 @@ export default function PostCard(props) {
   return (
     <Card
       sx={{
-        maxWidth: 345,
-        minHeight: 380,
+        maxWidth: "auto",
+        minHeight: 400,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -30,7 +30,11 @@ export default function PostCard(props) {
         <Typography gutterBottom variant="h6" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          sx={{ textAlign: "justify" }}
+          color="text.secondary"
+        >
           {content.slice(0, 170) + "..."}
         </Typography>
       </CardContent>

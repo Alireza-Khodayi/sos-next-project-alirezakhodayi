@@ -6,6 +6,8 @@ const Task = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+  backgroundColor: "white",
+  boxShadow: "2px 2px 10px 10px rgba(0,0,0.0.3)",
 });
 const SingleTask = (props) => {
   return (

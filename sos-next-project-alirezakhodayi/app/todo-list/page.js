@@ -2,7 +2,6 @@
 import AddTask from "./components/add-task";
 import TasksList from "./components/tasks-list";
 import PageTitle from "../blog/components/title";
-import Container from "./components/container";
 import { supabase } from "@/utils/supabase";
 import { useEffect, useState, useCallback } from "react";
 import Box from "@mui/material/Box";
@@ -10,16 +9,21 @@ import Skeleton from "@mui/material/Skeleton";
 import NoTask from "../../public/images/no-tasks.jpg";
 import Image from "next/image";
 import { styled } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 import Navigation from "../navbar";
+import ClearAllTasks from "./components/clear-tasks";
 
 const Main = styled("div")({
-  height: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
 });
 
+const Section = styled(Container)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
 export default function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -71,18 +75,24 @@ export default function TodoList() {
     <>
       <Navigation />
       <PageTitle>Todo List</PageTitle>
-      <Container>
-        <AddTask />
-        {isLoading ? (
-          <Box sx={{ width: 300 }}>
+
+      <AddTask />
+      {isLoading ? (
+        <Section>
+          <Box sx={{ width: 330 }}>
             <Skeleton />
             <Skeleton animation="wave" />
             <Skeleton animation={false} />
           </Box>
-        ) : (
-          tasksList()
-        )}
-      </Container>
+        </Section>
+      ) : (
+        tasksList()
+      )}
+      {tasks.length > 0 && (
+        <Section maxWidth="xs">
+          <ClearAllTasks />
+        </Section>
+      )}
     </>
   );
 }

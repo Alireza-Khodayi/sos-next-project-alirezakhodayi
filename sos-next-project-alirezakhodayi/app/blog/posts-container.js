@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 
 const BlogContainer = styled(Container)({
   display: "flex",
-  justifyContent: "space-center",
+  justifyContent: "center",
   alignItems: "center",
 });
 
@@ -17,6 +17,7 @@ const PostsContainer = (props) => {
     <BlogContainer dir="rtl" maxWidth={"xl"}>
       <Grid
         container
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
         spacing={{ xs: 1, sm: 1, md: 2 }}
         columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}
       >

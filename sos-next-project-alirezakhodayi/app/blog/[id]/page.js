@@ -1,5 +1,6 @@
 import Navigation from "@/app/navbar";
 import { supabase } from "@/utils/supabase";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -35,7 +36,20 @@ export default async function SinglePost({ params: { id } }) {
   return (
     <main>
       <Navigation />
-      <p>{JSON.stringify(post)}</p>
+      <br />
+      <br />
+
+      <div>
+        <Image
+          alt={post.post_title}
+          src={`/images/articles/${post.keyword}.webp`}
+          width={500}
+          height={250}
+        />
+        <h1>{post.post_title}</h1>
+        <p>{post.post_content}</p>
+        <p>کلمه کلیدی :{post.keyword}</p>
+      </div>
     </main>
   );
 }
