@@ -1,5 +1,5 @@
-import Navbar from "./navbar";
+import Navigation from "./navbar";
 
 export default function Home() {
-  return <Navbar />;
+  return <Navigation />;
 }

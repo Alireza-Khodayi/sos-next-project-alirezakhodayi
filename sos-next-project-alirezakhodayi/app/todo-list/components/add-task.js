@@ -26,6 +26,7 @@ const AddTask = () => {
     setIsSending(true);
     const { data, error } = await supabase.from("todos").insert([{ text }]);
     setIsSending(false);
+    setText("");
   };
   const changeHandler = (event) => setText(event.target.value);
   return (

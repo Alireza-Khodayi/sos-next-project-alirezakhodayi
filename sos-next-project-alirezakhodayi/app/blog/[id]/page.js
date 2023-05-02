@@ -1,3 +1,4 @@
+import Navigation from "@/app/navbar";
 import { supabase } from "@/utils/supabase";
 import { notFound } from "next/navigation";
 
@@ -31,5 +32,10 @@ export default async function SinglePost({ params: { id } }) {
     notFound();
   }
 
-  return <p>{JSON.stringify(post)}</p>;
+  return (
+    <main>
+      <Navigation />
+      <p>{JSON.stringify(post)}</p>
+    </main>
+  );
 }

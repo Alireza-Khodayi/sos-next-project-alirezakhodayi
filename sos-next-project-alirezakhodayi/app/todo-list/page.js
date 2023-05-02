@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "../navbar";
 import AddTask from "./components/add-task";
 import TasksList from "./components/tasks-list";
 import PageTitle from "../blog/components/title";
@@ -12,6 +11,7 @@ import NoTask from "../../public/images/no-tasks.jpg";
 import Image from "next/image";
 import { styled } from "@mui/material";
 import { Typography } from "@mui/material";
+import Navigation from "../navbar";
 
 const Main = styled("div")({
   height: "100vh",
@@ -69,7 +69,7 @@ export default function TodoList() {
   };
   return (
     <>
-      <Navbar />
+      <Navigation />
       <PageTitle>Todo List</PageTitle>
       <Container>
         <AddTask />
