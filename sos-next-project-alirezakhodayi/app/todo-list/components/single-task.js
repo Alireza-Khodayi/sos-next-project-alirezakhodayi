@@ -14,7 +14,7 @@ const SingleTask = (props) => {
         {props.text}
       </Typography>
       <div>
-        <DeleteTask />
+        <DeleteTask id={props.id} />
       </div>
     </Task>
   );

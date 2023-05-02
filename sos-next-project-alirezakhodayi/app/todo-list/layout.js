@@ -1,15 +1,11 @@
-import MuiTheme from "../theme/theme-provider";
-
-export const metadata = {
-  title: "ٔSOS | Todo List",
-};
+"use client";
+import { supabase } from "@/utils/supabase";
+import { Provider } from "react-supabase";
 
 export default function TodoListLayout({ children }) {
   return (
-    <html lang="fa" dir="ltr">
-      <MuiTheme>
-        <body>{children}</body>
-      </MuiTheme>
-    </html>
+    <Provider value={supabase}>
+      <main dir="ltr">{children}</main>
+    </Provider>
   );
 }

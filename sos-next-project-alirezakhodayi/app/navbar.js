@@ -14,10 +14,6 @@ const NavMain = styled(Box)({
   boxShadow: "0 5px 10px -5px rgba(0,0,0,0.44)",
   marginBottom: "15px",
 });
-const UnaffectedText = styled("div")`
-  /* @noflip */
-  text-align: left;
-`;
 const NavContainer = styled(Container)({
   display: "flex",
   justifyContent: "space-between",
@@ -37,29 +33,27 @@ const Navlinks = styled("ul")({
 
 const Navbar = () => {
   return (
-    <UnaffectedText>
-      <div dir="rtl">
-        <NavMain>
-          <NavContainer maxWidth="xl">
-            <Link href="/">
-              <Image src="/logo.svg" width={150} height={60} alt="logo" />
-            </Link>
-            <Navlinks>
-              {navLinks.map((link) => (
-                <Link key={link.id} href={link.href}>
-                  <Button>{link.linkTitle}</Button>
-                </Link>
-              ))}
-            </Navlinks>
-            <Box>
-              <Button variant="contained" size="large">
-                ورود و فعالسازی
-              </Button>
-            </Box>
-          </NavContainer>
-        </NavMain>
-      </div>
-    </UnaffectedText>
+    <div dir="rtl">
+      <NavMain>
+        <NavContainer maxWidth="xl">
+          <Link href="/">
+            <Image src="/logo.svg" width={150} height={60} alt="logo" />
+          </Link>
+          <Navlinks>
+            {navLinks.map((link) => (
+              <Link key={link.id} href={link.href}>
+                <Button>{link.linkTitle}</Button>
+              </Link>
+            ))}
+          </Navlinks>
+          <Box>
+            <Button variant="contained" size="large">
+              ورود و فعالسازی
+            </Button>
+          </Box>
+        </NavContainer>
+      </NavMain>
+    </div>
   );
 };
 
