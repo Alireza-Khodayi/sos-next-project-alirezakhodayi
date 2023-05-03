@@ -10,7 +10,7 @@ import NoTask from "../../public/images/no-tasks.jpg";
 import Image from "next/image";
 import { styled } from "@mui/material";
 import { Typography, Container } from "@mui/material";
-import Navigation from "../navbar";
+import Navigation from "../components/navbar";
 import ClearAllTasks from "./components/clear-tasks";
 
 const Main = styled("div")({

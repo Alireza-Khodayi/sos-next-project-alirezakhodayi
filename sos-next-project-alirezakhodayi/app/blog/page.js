@@ -1,4 +1,4 @@
-import Navbar from "../navbar";
+import Navbar from "../components/navbar";
 import { supabase } from "@/utils/supabase";
 import PostsContainer from "./posts-container";
 import PageTitle from "./components/title";
