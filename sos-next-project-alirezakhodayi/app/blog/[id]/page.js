@@ -1,4 +1,4 @@
-import Navigation from "@/app/navbar";
+import Navigation from "@/app/components/navbar";
 import { supabase } from "@/utils/supabase";
 import Image from "next/image";
 import { notFound } from "next/navigation";
