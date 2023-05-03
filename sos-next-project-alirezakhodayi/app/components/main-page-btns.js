@@ -4,17 +4,20 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 const images = [
   {
     url: "/images/blog.jpeg",
     title: "وبلاگ",
     width: "50%",
+    href: "/blog",
   },
   {
     url: "/images/todolist.png",
     title: "Todo List",
     width: "50%",
+    href: "/todo-list",
   },
 ];
 
@@ -94,24 +97,26 @@ const MainPageBtns = () => {
             width: image.width,
           }}
         >
-          <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-          <ImageBackdrop className="MuiImageBackdrop-root" />
-          <Image>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              sx={{
-                position: "relative",
-                p: 4,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-              }}
-            >
-              {image.title}
-              <ImageMarked className="MuiImageMarked-root" />
-            </Typography>
-          </Image>
+          <Link href={image.href}>
+            <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+            <ImageBackdrop className="MuiImageBackdrop-root" />
+            <Image>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                sx={{
+                  position: "relative",
+                  p: 4,
+                  pt: 2,
+                  pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                }}
+              >
+                {image.title}
+                <ImageMarked className="MuiImageMarked-root" />
+              </Typography>
+            </Image>
+          </Link>
         </ImageButton>
       ))}
     </Box>

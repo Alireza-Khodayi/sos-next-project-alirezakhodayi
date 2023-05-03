@@ -2,6 +2,7 @@ import Navigation from "@/app/navbar";
 import { supabase } from "@/utils/supabase";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import PostContainer from "./components/post-container";
 
 export async function generateStaticParams() {
   const { data: posts } = await supabase.from("posts").select("id");
@@ -11,7 +12,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { id } }) {
-  // fetch data
   const { data: post } = await supabase
     .from("posts")
     .select()
@@ -39,17 +39,17 @@ export default async function SinglePost({ params: { id } }) {
       <br />
       <br />
 
-      <div>
+      <PostContainer>
         <Image
           alt={post.post_title}
           src={`/images/articles/${post.keyword}.webp`}
-          width={500}
-          height={250}
+          width={350}
+          height={200}
         />
         <h1>{post.post_title}</h1>
         <p>{post.post_content}</p>
         <p>کلمه کلیدی :{post.keyword}</p>
-      </div>
+      </PostContainer>
     </main>
   );
 }
