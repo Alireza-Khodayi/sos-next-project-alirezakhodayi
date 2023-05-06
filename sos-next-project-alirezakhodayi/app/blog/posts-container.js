@@ -14,7 +14,7 @@ const BlogContainer = styled(Container)({
 const PostsContainer = (props) => {
   const data = props.data;
   return (
-    <BlogContainer dir="rtl" maxWidth={"xl"}>
+    <BlogContainer maxWidth={"xl"}>
       <Grid
         container
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -28,6 +28,7 @@ const PostsContainer = (props) => {
               content={post.post_content}
               image={post.keyword}
               link={post.id}
+              time={post.reading_time}
             />
           </Grid>
         ))}
