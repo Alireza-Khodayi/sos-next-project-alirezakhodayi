@@ -60,7 +60,7 @@ export default function PostCard(props) {
         >
           <AccessTimeIcon />
           <Typography variant="body2" color="text.secondary">
-            {`${time}`}&nbsp;دقیقه
+            {`${time  }`}&nbsp;دقیقه
           </Typography>
         </div>
         <Typography variant="body2" color="text.secondary">

@@ -24,10 +24,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const handleCloseNotif = () => {
-  setAdded(false);
-};
-
 const EditTaskForm = ({ id }) => {
   const [text, setText] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
@@ -47,6 +43,10 @@ const EditTaskForm = ({ id }) => {
     setIsUpdating(false);
     setUpdated(true);
     setText("");
+  };
+
+  const handleCloseNotif = () => {
+    setUpdated(false);
   };
 
   return (
